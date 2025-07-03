@@ -37,6 +37,18 @@ const config: Config = {
           },
         },
       },
+      colors: {
+        // Dark mode color palette
+        dark: {
+          bg: '#121212',
+          card: '#1E1E1E',
+          accent: '#26A69A',
+          highlight: '#80CBC4',
+          text: '#FFFFFF',
+          muted: '#CCCCCC',
+          border: '#2A2A2A',
+        }
+      },
     },
   },
   plugins: [],

@@ -28,42 +28,42 @@ const Hero: React.FC = () => {
     {
       icon: <FaShieldAlt className="w-5 h-5" />,
       text: "Verified PGs",
-      color: "bg-green-100 text-green-600",
+      color: "bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400",
       position: "top-10 right-0 lg:-right-10",
       delay: 0.2
     },
     {
       icon: <FaUserFriends className="w-5 h-5" />,
       text: "AI Matching",
-      color: "bg-blue-100 text-blue-600",
+      color: "bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400",
       position: "bottom-0 left-10 lg:-bottom-10 lg:left-20",
       delay: 0.4
     },
     {
       icon: <FaMapMarkerAlt className="w-5 h-5" />,
       text: "Prime Locations",
-      color: "bg-purple-100 text-purple-600",
+      color: "bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400",
       position: "top-20 left-0 lg:top-40 lg:-left-10",
       delay: 0.6
     },
     {
       icon: <FaRegClock className="w-5 h-5" />,
       text: "Quick Booking",
-      color: "bg-yellow-100 text-yellow-600",
+      color: "bg-yellow-100 text-yellow-600 dark:bg-yellow-900/30 dark:text-yellow-400",
       position: "bottom-10 right-0 lg:bottom-20 lg:-right-8",
       delay: 0.8
     },
     {
       icon: <FaRupeeSign className="w-5 h-5" />,
       text: "Best Prices",
-      color: "bg-pink-100 text-pink-600",
+      color: "bg-pink-100 text-pink-600 dark:bg-pink-900/30 dark:text-pink-400",
       position: "top-1/2 right-0 lg:-right-12",
       delay: 1.0
     },
     {
       icon: <FaHome className="w-5 h-5" />,
       text: "Quality Homes",
-      color: "bg-indigo-100 text-indigo-600",
+      color: "bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400",
       position: "bottom-0 right-1/4 lg:-bottom-8",
       delay: 1.2
     }
@@ -72,9 +72,9 @@ const Hero: React.FC = () => {
   return (
     <section className="relative min-h-[calc(100vh-4rem)] py-16 flex items-center overflow-hidden">
       {/* Background Blobs */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#f8ffff] to-white">
+      <div className="absolute inset-0 gradient-bg-1">
         <motion.div
-          className="absolute -top-1/4 -left-1/4 w-[50%] h-[50%] bg-[#003D3D]/5 rounded-full filter blur-[100px]"
+          className="absolute -top-1/4 -left-1/4 w-[50%] h-[50%] bg-[var(--brand-color)]/5 rounded-full filter blur-[100px]"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
@@ -86,7 +86,7 @@ const Hero: React.FC = () => {
           }}
         />
         <motion.div
-          className="absolute -bottom-1/4 -right-1/4 w-[60%] h-[60%] bg-[#006666]/5 rounded-full filter blur-[120px]"
+          className="absolute -bottom-1/4 -right-1/4 w-[60%] h-[60%] bg-[var(--brand-color)]/5 rounded-full filter blur-[120px]"
           animate={{
             scale: [1.2, 1, 1.2],
             opacity: [0.2, 0.4, 0.2],
@@ -98,7 +98,7 @@ const Hero: React.FC = () => {
           }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[40%] h-[40%] bg-[#003D3D]/3 rounded-full filter blur-[80px]"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[40%] h-[40%] bg-[var(--brand-color)]/3 rounded-full filter blur-[80px]"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.2, 0.4, 0.2],
@@ -121,7 +121,7 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="mb-6"
             >
-              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
+              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400">
                 <span className="relative flex h-2 w-2 mr-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-500"></span>
@@ -134,17 +134,17 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              className="text-4xl md:text-6xl font-bold text-[var(--foreground)] mb-6"
             >
               Find Your Perfect
-              <span className="text-[#003D3D]"> Living Space</span>
+              <span className="text-[var(--brand-color)]"> Living Space</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0"
+              className="text-lg md:text-xl text-[var(--muted-text)] mb-8 max-w-2xl mx-auto lg:mx-0"
             >
               Join the waitlist for the smartest way to find rooms, PGs, and compatible roommates
             </motion.p>
@@ -159,7 +159,7 @@ const Hero: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => openModal('signup')}
-                className="px-8 py-3 bg-[#003D3D] text-white rounded-full font-semibold hover:bg-[#002828] transition-colors duration-300"
+                className="px-8 py-3 bg-[var(--brand-color)] text-white rounded-full font-semibold hover:opacity-90 transition-all duration-300"
               >
                 Sign Up
               </motion.button>
@@ -167,7 +167,7 @@ const Hero: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => openModal('login')}
-                className="px-8 py-3 bg-white text-[#003D3D] border-2 border-[#003D3D] rounded-full font-semibold hover:bg-[#f8ffff] transition-colors duration-300"
+                className="px-8 py-3 bg-transparent text-[var(--brand-color)] border-2 border-[var(--brand-color)] rounded-full font-semibold hover:bg-[var(--brand-color)]/10 transition-all duration-300"
               >
                 Login
               </motion.button>
@@ -218,7 +218,7 @@ const Hero: React.FC = () => {
                     }}
                   >
                     <motion.div
-                      className={`${card.color} px-4 py-2 rounded-lg shadow-lg backdrop-blur-sm flex items-center gap-2 border border-white/20`}
+                      className={`${card.color} px-4 py-2 rounded-lg shadow-lg backdrop-blur-sm flex items-center gap-2 border border-white/20 dark:border-white/10`}
                       animate={{ 
                         y: [-5, 5, -5],
                         x: [-3, 3, -3],
@@ -236,7 +236,7 @@ const Hero: React.FC = () => {
                         transition: { duration: 0.2 }
                       }}
                     >
-                      <span className="p-1 bg-white rounded-full">
+                      <span className="p-1 bg-white dark:bg-gray-800 rounded-full">
                         {card.icon}
                       </span>
                       <span className="font-medium whitespace-nowrap text-sm">
@@ -248,7 +248,7 @@ const Hero: React.FC = () => {
 
                 {/* Decorative Elements */}
                 <motion.div
-                  className="absolute -z-10 w-40 h-40 rounded-full bg-gradient-to-r from-[#003D3D]/20 to-transparent blur-2xl"
+                  className="absolute -z-10 w-40 h-40 rounded-full bg-gradient-to-r from-[var(--brand-color)]/20 to-transparent blur-2xl"
                   animate={{
                     scale: [1, 1.2, 1],
                     opacity: [0.3, 0.5, 0.3]
@@ -264,7 +264,7 @@ const Hero: React.FC = () => {
                   }}
                 />
                 <motion.div
-                  className="absolute -z-10 w-32 h-32 rounded-full bg-[#003D3D]/5 blur-2xl"
+                  className="absolute -z-10 w-32 h-32 rounded-full bg-[var(--brand-color)]/5 blur-2xl"
                   animate={{
                     scale: [1, 1.2, 1],
                     opacity: [0.5, 0.8, 0.5]
@@ -280,7 +280,7 @@ const Hero: React.FC = () => {
                   }}
                 />
                 <motion.div
-                  className="absolute -z-10 w-40 h-40 rounded-full bg-[#003D3D]/5 blur-2xl"
+                  className="absolute -z-10 w-40 h-40 rounded-full bg-[var(--brand-color)]/5 blur-2xl"
                   animate={{
                     scale: [1.2, 1, 1.2],
                     opacity: [0.5, 0.8, 0.5]
