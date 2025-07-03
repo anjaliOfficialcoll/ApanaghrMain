@@ -59,7 +59,7 @@ const HowItWorks: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-[#f8ffff] to-white dark:from-[#1a1a1a] dark:to-[#121212]">
+    <section className="py-16 bg-gradient-to-b from-[#f8ffff] to-white dark:bg-gradient-to-b dark:from-[#1a1a1a] dark:to-[#121212]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -85,9 +85,9 @@ const HowItWorks: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative"
             >
-              <div className="bg-white dark:bg-[#1E1E1E] rounded-xl p-4 lg:p-6 shadow-md hover:shadow-lg dark:shadow-lg dark:shadow-black/20 transition-shadow duration-300 h-full dark:border dark:border-[#2A2A2A]">
+              <div className="bg-white dark:bg-[#1E1E1E] rounded-xl p-4 lg:p-6 shadow-md hover:shadow-lg transition-shadow duration-300 h-full dark:border dark:border-[#2A2A2A]">
                 <div className="flex flex-col items-center text-center space-y-3">
-                  <span className={`text-2xl sm:text-3xl text-[#003D3D] dark:text-[#26A69A] mb-2`}>
+                  <span className="text-2xl sm:text-3xl text-[#003D3D] dark:text-[#26A69A] mb-2">
                     {step.icon}
                   </span>
                   <span className="inline-block px-3 py-1 bg-[#003D3D]/10 dark:bg-[#26A69A]/20 rounded-full text-xs font-medium text-[#003D3D] dark:text-[#26A69A]">
