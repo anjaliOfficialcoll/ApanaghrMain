@@ -66,7 +66,7 @@ const WhyApnaGhr: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`${reason.color} rounded-xl p-4 md:p-6 shadow-md hover:shadow-lg dark:shadow-lg dark:shadow-black/20 transition-all duration-300 border border-transparent dark:border-white/10`}
+              className={`${reason.color} rounded-xl p-4 md:p-6 shadow-md hover:shadow-lg dark:shadow-lg dark:shadow-black/20 transition-all duration-300 dark:border dark:border-white/10`}
             >
               <div className="flex flex-col items-center text-center space-y-3">
                 <span className="p-3 bg-white dark:bg-gray-800/50 rounded-full">

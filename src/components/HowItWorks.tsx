@@ -19,25 +19,25 @@ const HowItWorks: React.FC = () => {
       title: "Create Profile",
       description: "Set up your preferences and requirements for the perfect living space.",
       icon: <FaUserCircle className="w-10 h-10" />,
-      color: "text-blue-500 dark:text-blue-400"
+      color: "text-blue-500"
     },
     {
       title: "AI Matching",
       description: "Our AI system finds compatible roommates and PGs based on your profile.",
       icon: <FaRobot className="w-10 h-10" />,
-      color: "text-green-500 dark:text-green-400"
+      color: "text-green-500"
     },
     {
       title: "Connect & Visit",
       description: "Connect with matches and schedule visits to your potential new home.",
       icon: <FaHandshake className="w-10 h-10" />,
-      color: "text-purple-500 dark:text-purple-400"
+      color: "text-purple-500"
     },
     {
       title: "Move In",
       description: "Complete the booking process and move into your new home.",
       icon: <FaHome className="w-10 h-10" />,
-      color: "text-indigo-500 dark:text-indigo-400"
+      color: "text-indigo-500"
     }
   ];
 
@@ -85,9 +85,9 @@ const HowItWorks: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative"
             >
-              <div className="bg-white dark:bg-[#1E1E1E] rounded-xl p-4 lg:p-6 shadow-md hover:shadow-lg dark:shadow-lg dark:shadow-black/20 transition-shadow duration-300 h-full border border-transparent dark:border-[#2A2A2A]">
+              <div className="bg-white dark:bg-[#1E1E1E] rounded-xl p-4 lg:p-6 shadow-md hover:shadow-lg dark:shadow-lg dark:shadow-black/20 transition-shadow duration-300 h-full dark:border dark:border-[#2A2A2A]">
                 <div className="flex flex-col items-center text-center space-y-3">
-                  <span className={`text-2xl sm:text-3xl ${step.color} mb-2`}>
+                  <span className={`text-2xl sm:text-3xl text-[#003D3D] dark:text-[#26A69A] mb-2`}>
                     {step.icon}
                   </span>
                   <span className="inline-block px-3 py-1 bg-[#003D3D]/10 dark:bg-[#26A69A]/20 rounded-full text-xs font-medium text-[#003D3D] dark:text-[#26A69A]">
