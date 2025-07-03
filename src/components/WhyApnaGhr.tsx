@@ -9,7 +9,8 @@ interface Reason {
   icon: ReactElement;
   title: string;
   description: string;
-  color: string;
+  lightColor: string;
+  darkColor: string;
 }
 
 const WhyApnaGhr: React.FC = () => {
@@ -18,25 +19,29 @@ const WhyApnaGhr: React.FC = () => {
       icon: <FaShieldAlt className="w-8 h-8" />,
       title: "Verified Properties",
       description: "All properties are thoroughly verified for your safety and comfort",
-      color: "bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400"
+      lightColor: "bg-blue-50 text-blue-600",
+      darkColor: "dark:bg-blue-900/30 dark:text-blue-400"
     },
     {
       icon: <FaSearchLocation className="w-8 h-8" />,
       title: "Smart Location",
       description: "Find accommodations near your workplace or institution",
-      color: "bg-green-50 text-green-600 dark:bg-green-900/30 dark:text-green-400"
+      lightColor: "bg-green-50 text-green-600",
+      darkColor: "dark:bg-green-900/30 dark:text-green-400"
     },
     {
       icon: <FaHandshake className="w-8 h-8" />,
       title: "Trusted Partners",
       description: "Work with verified property owners and reliable partners",
-      color: "bg-purple-50 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400"
+      lightColor: "bg-purple-50 text-purple-600",
+      darkColor: "dark:bg-purple-900/30 dark:text-purple-400"
     },
     {
       icon: <FaRegClock className="w-8 h-8" />,
       title: "Quick Process",
       description: "Streamlined booking process to save your valuable time",
-      color: "bg-orange-50 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400"
+      lightColor: "bg-orange-50 text-orange-600",
+      darkColor: "dark:bg-orange-900/30 dark:text-orange-400"
     }
   ];
 
@@ -66,7 +71,7 @@ const WhyApnaGhr: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`${reason.color} rounded-xl p-4 md:p-6 shadow-md hover:shadow-lg transition-all duration-300`}
+              className={`${reason.lightColor} ${reason.darkColor} rounded-xl p-4 md:p-6 shadow-md hover:shadow-lg transition-all duration-300`}
             >
               <div className="flex flex-col items-center text-center space-y-3">
                 <span className="p-3 bg-white dark:bg-gray-800/50 rounded-full">

@@ -9,7 +9,8 @@ interface Problem {
   icon: ReactElement;
   title: string;
   description: string;
-  color: string;
+  lightColor: string;
+  darkColor: string;
 }
 
 const ProblemsWeSolve: React.FC = () => {
@@ -18,25 +19,29 @@ const ProblemsWeSolve: React.FC = () => {
       icon: <FaMoneyBillWave className="w-8 h-8" />,
       title: "Finding Affordable PGs",
       description: "Say goodbye to expensive broker fees and hidden charges",
-      color: "bg-rose-50 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400"
+      lightColor: "bg-rose-50 text-rose-600",
+      darkColor: "dark:bg-rose-900/30 dark:text-rose-400"
     },
     {
       icon: <FaUserShield className="w-8 h-8" />,
       title: "Safety Concerns",
       description: "All properties and roommates are thoroughly verified",
-      color: "bg-cyan-50 text-cyan-600 dark:bg-cyan-900/30 dark:text-cyan-400"
+      lightColor: "bg-cyan-50 text-cyan-600",
+      darkColor: "dark:bg-cyan-900/30 dark:text-cyan-400"
     },
     {
       icon: <FaHandshake className="w-8 h-8" />,
       title: "Trustworthy Owners",
       description: "Connect with verified and reliable property owners",
-      color: "bg-amber-50 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400"
+      lightColor: "bg-amber-50 text-amber-600",
+      darkColor: "dark:bg-amber-900/30 dark:text-amber-400"
     },
     {
       icon: <FaClock className="w-8 h-8" />,
       title: "Time-Consuming Search",
       description: "Quick and efficient property discovery process",
-      color: "bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400"
+      lightColor: "bg-emerald-50 text-emerald-600",
+      darkColor: "dark:bg-emerald-900/30 dark:text-emerald-400"
     }
   ];
 
@@ -66,7 +71,7 @@ const ProblemsWeSolve: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`${problem.color} rounded-xl p-4 md:p-6 shadow-md hover:shadow-lg transition-all duration-300 h-full`}
+              className={`${problem.lightColor} ${problem.darkColor} rounded-xl p-4 md:p-6 shadow-md hover:shadow-lg transition-all duration-300 h-full`}
             >
               <div className="flex flex-col items-center text-center space-y-3">
                 <span className="p-3 bg-white dark:bg-gray-800/50 rounded-full shadow-sm">
