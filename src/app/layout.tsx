@@ -21,10 +21,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="theme-color" content="#ffffff" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                let theme = localStorage.getItem('theme') || 
+                  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.classList[theme === 'dark' ? 'add' : 'remove']('dark');
+                document.documentElement.style.colorScheme = theme;
+              })()
+            `,
+          }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider>
-          <ClientLayout>{children}</ClientLayout>
+          <ClientLayout>
+            <div className="min-h-screen bg-white dark:bg-[#121212] transition-colors duration-300">
+              {children}
+            </div>
+          </ClientLayout>
         </ThemeProvider>
       </body>
     </html>

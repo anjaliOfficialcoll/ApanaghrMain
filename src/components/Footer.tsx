@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#003D3D] text-white">
+    <footer className="bg-[#003D3D] dark:bg-[#121212] text-white transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-2 gap-8">
@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
                     alt="ApanaGhr Logo"
                     fill
                     sizes="40px"
-                    className="object-contain"
+                    className="object-contain dark:invert"
                     style={{ 
                       transform: 'scale(1.1)',
                       filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.2))'
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
                   </h2>
                 </div>
               </div>
-              <p className="text-gray-300 text-sm mb-4">
+              <p className="text-gray-300 dark:text-gray-400 text-sm mb-4">
                 Finding your perfect living space made simple and secure.
               </p>
             </div>
@@ -102,7 +102,7 @@ const Footer: React.FC = () => {
                   <li key={index}>
                     <a 
                       href={link.href} 
-                      className="text-gray-300 hover:text-white text-sm transition-colors duration-300"
+                      className="text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-white text-sm transition-colors duration-300"
                     >
                       {link.name}
                     </a>
@@ -122,7 +122,7 @@ const Footer: React.FC = () => {
                   <li key={index}>
                     <a 
                       href={link.href} 
-                      className="text-gray-300 hover:text-white text-sm transition-colors duration-300"
+                      className="text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-white text-sm transition-colors duration-300"
                     >
                       {link.name}
                     </a>
@@ -135,6 +135,7 @@ const Footer: React.FC = () => {
             <div>
               <h3 className="text-lg font-semibold mb-3">Stay Updated</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
+<<<<<<< HEAD
                 <div className="space-y-3">
                   <input
                     type="email"
@@ -153,6 +154,39 @@ const Footer: React.FC = () => {
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.99 }}
                     disabled={isSubmitting}
+=======
+              <div className="space-y-3">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                  className="w-full px-4 py-2.5 bg-[#002828] dark:bg-[#1E1E1E] text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-white/30 dark:focus:ring-[#26A69A]/30 transition-all duration-300 text-sm"
+                  disabled={isSubmitting}
+                />
+                <motion.button
+                  type="submit"
+                  className={`w-full flex items-center justify-center px-4 py-2.5 bg-white dark:bg-[#26A69A] text-gray-900 dark:text-white hover:text-black dark:hover:text-white rounded-lg transition-all duration-300 text-sm font-medium ${
+                    isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-gray-50 dark:hover:bg-[#2A897F]'
+                  }`}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.99 }}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Submitting...' : 'Subscribe'}
+                </motion.button>
+              </div>
+              
+              {/* Success Message */}
+              <AnimatePresence>
+                {showSuccess && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="text-green-400 dark:text-[#4FD1C5] text-sm flex items-center justify-center space-x-2"
+>>>>>>> aba8dc6 (Added dark mode)
                   >
                     {isSubmitting ? 'Submitting...' : 'Subscribe'}
                   </motion.button>
@@ -180,7 +214,11 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Section with Social Icons and Copyright */}
+<<<<<<< HEAD
         <div className="mt-12 pt-8 border-t border-gray-700">
+=======
+        <div className="mt-12 pt-8 border-t border-gray-800 dark:border-gray-700">
+>>>>>>> aba8dc6 (Added dark mode)
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 pb-8">
             {/* Social Media Icons */}
             <div className="flex space-x-6">
@@ -190,7 +228,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, y: -3 }}
                 whileTap={{ scale: 0.9 }}
-                className="text-gray-400 hover:text-white transition-colors duration-300"
+                className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-[#4FD1C5] transition-colors duration-300"
                 aria-label="Email us"
               >
                 <FaEnvelope className="w-5 h-5" />
@@ -201,7 +239,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, y: -3 }}
                 whileTap={{ scale: 0.9 }}
-                className="text-gray-400 hover:text-white transition-colors duration-300"
+                className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-[#4FD1C5] transition-colors duration-300"
                 aria-label="Follow us on Instagram"
               >
                 <FaInstagram className="w-5 h-5" />
@@ -212,7 +250,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, y: -3 }}
                 whileTap={{ scale: 0.9 }}
-                className="text-gray-400 hover:text-white transition-colors duration-300"
+                className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-[#4FD1C5] transition-colors duration-300"
                 aria-label="Follow us on Twitter"
               >
                 <FaTwitter className="w-5 h-5" />
@@ -223,7 +261,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, y: -3 }}
                 whileTap={{ scale: 0.9 }}
-                className="text-gray-400 hover:text-white transition-colors duration-300"
+                className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-[#4FD1C5] transition-colors duration-300"
                 aria-label="Connect with us on LinkedIn"
               >
                 <FaLinkedin className="w-5 h-5" />
@@ -231,7 +269,7 @@ const Footer: React.FC = () => {
             </div>
             
             {/* Copyright */}
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 dark:text-gray-500 text-sm">
               &copy; {currentYear} ApanaGhr. All rights reserved.
             </p>
           </div>
