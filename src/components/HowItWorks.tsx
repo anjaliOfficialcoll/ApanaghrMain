@@ -59,11 +59,7 @@ const HowItWorks: React.FC = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <section className="py-16 bg-gradient-to-b from-[#f8ffff] to-white dark:bg-gradient-to-b dark:from-[#1a1a1a] dark:to-[#121212]">
-=======
     <section className="py-16 bg-gradient-to-b from-[#f8ffff] to-white dark:bg-black">
->>>>>>> aba8dc6 (Added dark mode)
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -74,11 +70,7 @@ const HowItWorks: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             How It Works
           </h2>
-<<<<<<< HEAD
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-=======
           <p className="text-lg text-gray-600 dark:text-white max-w-2xl mx-auto">
->>>>>>> aba8dc6 (Added dark mode)
             Find your perfect living space in just a few simple steps
           </p>
         </motion.div>

@@ -135,7 +135,6 @@ const Footer: React.FC = () => {
             <div>
               <h3 className="text-lg font-semibold mb-3">Stay Updated</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
-<<<<<<< HEAD
                 <div className="space-y-3">
                   <input
                     type="email"
@@ -143,50 +142,17 @@ const Footer: React.FC = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
                     required
-                    className="w-full px-4 py-2.5 bg-[#002828] text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-white/30 transition-all duration-300 text-sm border border-transparent"
+                    className="w-full px-4 py-2.5 bg-[#002828] dark:bg-[#1E1E1E] text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-white/30 dark:focus:ring-[#26A69A]/30 transition-all duration-300 text-sm"
                     disabled={isSubmitting}
                   />
                   <motion.button
                     type="submit"
-                    className={`w-full flex items-center justify-center px-4 py-2.5 bg-white text-gray-900 hover:text-black rounded-lg transition-all duration-300 text-sm font-medium ${
-                      isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-gray-50'
+                    className={`w-full flex items-center justify-center px-4 py-2.5 bg-white dark:bg-[#26A69A] text-gray-900 dark:text-white hover:text-black dark:hover:text-white rounded-lg transition-all duration-300 text-sm font-medium ${
+                      isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-gray-50 dark:hover:bg-[#2A897F]'
                     }`}
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.99 }}
                     disabled={isSubmitting}
-=======
-              <div className="space-y-3">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  required
-                  className="w-full px-4 py-2.5 bg-[#002828] dark:bg-[#1E1E1E] text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-white/30 dark:focus:ring-[#26A69A]/30 transition-all duration-300 text-sm"
-                  disabled={isSubmitting}
-                />
-                <motion.button
-                  type="submit"
-                  className={`w-full flex items-center justify-center px-4 py-2.5 bg-white dark:bg-[#26A69A] text-gray-900 dark:text-white hover:text-black dark:hover:text-white rounded-lg transition-all duration-300 text-sm font-medium ${
-                    isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-gray-50 dark:hover:bg-[#2A897F]'
-                  }`}
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.99 }}
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? 'Submitting...' : 'Subscribe'}
-                </motion.button>
-              </div>
-              
-              {/* Success Message */}
-              <AnimatePresence>
-                {showSuccess && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="text-green-400 dark:text-[#4FD1C5] text-sm flex items-center justify-center space-x-2"
->>>>>>> aba8dc6 (Added dark mode)
                   >
                     {isSubmitting ? 'Submitting...' : 'Subscribe'}
                   </motion.button>
@@ -199,7 +165,7 @@ const Footer: React.FC = () => {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="text-green-400 text-sm flex items-center justify-center space-x-2"
+                      className="text-green-400 dark:text-[#4FD1C5] text-sm flex items-center justify-center space-x-2"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
@@ -214,11 +180,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Section with Social Icons and Copyright */}
-<<<<<<< HEAD
-        <div className="mt-12 pt-8 border-t border-gray-700">
-=======
         <div className="mt-12 pt-8 border-t border-gray-800 dark:border-gray-700">
->>>>>>> aba8dc6 (Added dark mode)
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 pb-8">
             {/* Social Media Icons */}
             <div className="flex space-x-6">
