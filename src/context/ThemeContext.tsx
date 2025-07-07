@@ -11,58 +11,6 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-<<<<<<< HEAD
-export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<'light' | 'dark'>('light');
-  const [mounted, setMounted] = useState(false);
-
-  // Handle hydration
-  useEffect(() => {
-    setMounted(true);
-    
-    // Check for saved theme preference or default to light
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-    setThemeState(initialTheme);
-    
-    // Apply theme to document
-    applyTheme(initialTheme);
-  }, []);
-
-  const applyTheme = (newTheme: 'light' | 'dark') => {
-    const root = document.documentElement;
-    
-    if (newTheme === 'dark') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
-  };
-
-  const setTheme = (newTheme: 'light' | 'dark') => {
-    setThemeState(newTheme);
-    localStorage.setItem('theme', newTheme);
-    applyTheme(newTheme);
-  };
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-  };
-
-  // Prevent hydration mismatch
-  if (!mounted) {
-    return <>{children}</>;
-  }
-
-  const value = {
-    theme,
-    isDarkMode: theme === 'dark',
-    toggleTheme,
-    setTheme,
-=======
 // Script to prevent flash of unstyled content (FOUC)
 const themeScript = `
   (function() {
@@ -88,8 +36,6 @@ const themeScript = `
     const root = document.documentElement;
 
     root.classList[theme === 'dark' ? 'add' : 'remove']('dark');
-    
-    // Prevent transition flash
     root.style.colorScheme = theme;
   })()
 `;
@@ -149,7 +95,6 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       root.classList.remove('dark');
       root.style.colorScheme = 'light';
     }
->>>>>>> aba8dc6 (Added dark mode)
   };
 
   const setTheme = (newTheme: 'light' | 'dark') => {
@@ -163,19 +108,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     setTheme(newTheme);
   };
 
-  const isDarkMode = theme === 'dark';
-
   // Don't render children until mounted to prevent hydration issues
   if (!mounted) {
     return null;
   }
 
   return (
-<<<<<<< HEAD
-    <ThemeContext.Provider value={value}>
-=======
-    <ThemeContext.Provider value={{ theme, isDarkMode, toggleTheme, setTheme }}>
->>>>>>> aba8dc6 (Added dark mode)
+    <ThemeContext.Provider value={{ theme, isDarkMode: theme === 'dark', toggleTheme, setTheme }}>
       {children}
     </ThemeContext.Provider>
   );
@@ -187,10 +126,4 @@ export const useTheme = () => {
     throw new Error('useTheme must be used within a ThemeProvider');
   }
   return context;
-<<<<<<< HEAD
-}
-
-export default ThemeContext;
-=======
 };
->>>>>>> aba8dc6 (Added dark mode)
