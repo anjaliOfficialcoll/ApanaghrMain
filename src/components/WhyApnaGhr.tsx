@@ -78,7 +78,11 @@ const WhyApnaGhr: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+<<<<<<< HEAD
               className={`group relative rounded-xl p-4 md:p-6
+=======
+              className={`group relative rounded-xl p-4 md:p-6 
+>>>>>>> bc6aceadb742f43a192e481a66efffbd101e6bdc
                          ${reason.lightColor} ${reason.darkStyle}
                          shadow-md hover:shadow-lg
                          dark:shadow-lg dark:shadow-black/40

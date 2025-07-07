@@ -117,6 +117,7 @@ const Footer: React.FC = () => {
 
             {/* Support Links */}
             <div>
+<<<<<<< HEAD
               <h3 className="text-lg font-semibold mb-4">Support</h3>
               <ul className="space-y-3">
                 {footerLinks.support.map((link) => (
@@ -124,6 +125,41 @@ const Footer: React.FC = () => {
                     <a
                       href={link.href}
                       className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-[#26A69A] transition-colors duration-300"
+=======
+              <h3 className="text-lg font-semibold mb-3">Stay Updated</h3>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-3">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    required
+                    className="w-full px-4 py-2.5 bg-[#002828] dark:bg-[#1E1E1E] text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-white/30 dark:focus:ring-[#26A69A]/30 transition-all duration-300 text-sm"
+                    disabled={isSubmitting}
+                  />
+                  <motion.button
+                    type="submit"
+                    className={`w-full flex items-center justify-center px-4 py-2.5 bg-white dark:bg-[#26A69A] text-gray-900 dark:text-white hover:text-black dark:hover:text-white rounded-lg transition-all duration-300 text-sm font-medium ${
+                      isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-gray-50 dark:hover:bg-[#2A897F]'
+                    }`}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.99 }}
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Subscribe'}
+                  </motion.button>
+                </div>
+                
+                {/* Success Message */}
+                <AnimatePresence>
+                  {showSuccess && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="text-green-400 dark:text-[#4FD1C5] text-sm flex items-center justify-center space-x-2"
+>>>>>>> bc6aceadb742f43a192e481a66efffbd101e6bdc
                     >
                       {link.name}
                     </a>
@@ -151,6 +187,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
+<<<<<<< HEAD
         {/* Newsletter Subscription */}
         <div className="mt-12 border-t border-gray-600 dark:border-gray-800 pt-8">
           <form onSubmit={handleSubmit} className="max-w-md">
@@ -172,6 +209,21 @@ const Footer: React.FC = () => {
                 className="px-6 py-2 rounded-lg bg-[#26A69A] hover:bg-[#2BC4B5] 
                          disabled:opacity-50 disabled:cursor-not-allowed
                          transition-colors duration-300"
+=======
+        {/* Bottom Section with Social Icons and Copyright */}
+        <div className="mt-12 pt-8 border-t border-gray-800 dark:border-gray-700">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 pb-8">
+            {/* Social Media Icons */}
+            <div className="flex space-x-6">
+              <motion.a
+                href="mailto:contact@apanaghr.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.2, y: -3 }}
+                whileTap={{ scale: 0.9 }}
+                className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-[#4FD1C5] transition-colors duration-300"
+                aria-label="Email us"
+>>>>>>> bc6aceadb742f43a192e481a66efffbd101e6bdc
               >
                 {isSubmitting ? 'Subscribing...' : 'Subscribe'}
               </button>

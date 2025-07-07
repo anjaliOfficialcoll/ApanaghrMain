@@ -21,6 +21,7 @@
   }
 }
 
+<<<<<<< HEAD
 /* Base styles */
 body {
   font-family: var(--font-sans);
@@ -33,6 +34,77 @@ body {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
+=======
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --brand-color: #006B6C;
+  --card-bg: #f8f9fa;
+  --muted-text: #6c757d;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --input-bg: #ffffff;
+  --input-border: #d1d5db;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --accent-bg: #f8ffff;
+  --hover-bg: #f3f4f6;
+  --border-color: #e5e7eb;
+  --success-bg: #f0fdf4;
+  --success-text: #166534;
+  --warning-bg: #fffbeb;
+  --warning-text: #92400e;
+  --error-bg: #fef2f2;
+  --error-text: #dc2626;
+  --modal-bg: #ffffff;
+  --modal-overlay: rgba(0, 0, 0, 0.25);
+
+  /* Additional theme variables */
+  --primary-gradient: linear-gradient(135deg, #006B6C 0%, #00A3A4 100%);
+  --card-hover: #ffffff;
+  --divider: #e5e7eb;
+  --link: #006B6C;
+  --link-hover: #005455;
+  --button-text: #ffffff;
+  --button-disabled: #e5e7eb;
+}
+
+:root.dark {
+  --background: #121212;
+  --foreground: #ffffff;
+  --brand-color: #26A69A;
+  --card-bg: #1E1E1E;
+  --muted-text: #CCCCCC;
+  --nav-bg: rgba(18, 18, 18, 0.9);
+  --input-bg: #1E1E1E;
+  --input-border: #2A2A2A;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --accent-bg: #1a1a1a;
+  --hover-bg: #2a2a2a;
+  --border-color: #2A2A2A;
+  --success-bg: #1a2e1a;
+  --success-text: #80CBC4;
+  --warning-bg: #2a2416;
+  --warning-text: #fbbf24;
+  --error-bg: #2a1616;
+  --error-text: #f87171;
+  --modal-bg: #1E1E1E;
+  --modal-overlay: rgba(0, 0, 0, 0.6);
+
+  /* Additional dark mode variables */
+  --primary-gradient: linear-gradient(135deg, #26A69A 0%, #4DB6AC 100%);
+  --card-hover: #252525;
+  --divider: #2A2A2A;
+  --link: #4DB6AC;
+  --link-hover: #26A69A;
+  --button-text: #ffffff;
+  --button-disabled: #2A2A2A;
+}
+
+/* Global transitions */
+*, ::before, ::after {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+>>>>>>> bc6aceadb742f43a192e481a66efffbd101e6bdc
 }
 
 /* Animation delays */
