@@ -41,7 +41,6 @@ const HowItWorks: React.FC = () => {
   ];
 
   return (
-<<<<<<< HEAD
     <section className="py-16 relative">
       {/* Main background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#f8ffff] to-white dark:from-[#121212] dark:to-[#1E1E1E] transition-colors duration-300" />
@@ -50,10 +49,6 @@ const HowItWorks: React.FC = () => {
       <div className="absolute inset-0 opacity-0 dark:opacity-100 bg-gradient-to-b dark:from-[#121212] dark:via-[#1E1E1E] dark:to-[#121212] transition-all duration-300" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-=======
-    <section className="py-16 bg-gradient-to-b from-[#f8ffff] to-white dark:bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
->>>>>>> bc6aceadb742f43a192e481a66efffbd101e6bdc
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,11 +59,7 @@ const HowItWorks: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             How It Works
           </h2>
-<<<<<<< HEAD
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-=======
           <p className="text-lg text-gray-600 dark:text-white max-w-2xl mx-auto">
->>>>>>> bc6aceadb742f43a192e481a66efffbd101e6bdc
             Find your perfect living space in just a few simple steps
           </p>
         </motion.div>

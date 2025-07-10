@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#003D3D] dark:bg-[#121212] text-white transition-colors duration-300">
+    <footer className="bg-[#003D3D] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Newsletter Subscription */}
@@ -66,11 +66,11 @@ const Footer: React.FC = () => {
                   alt="ApanaGhr Logo"
                   width={40}
                   height={40}
-                  className="dark:brightness-200"
+                  className="brightness-200"
                 />
                 <span className="text-xl font-semibold">ApanaGhr</span>
               </div>
-              <p className="text-gray-300 dark:text-gray-400 max-w-md">
+              <p className="text-gray-300 max-w-md">
                 Finding the perfect living space and compatible roommates made easy. Your trusted partner in housing solutions.
               </p>
             </div>
@@ -85,14 +85,12 @@ const Footer: React.FC = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
                     required
-                    className="w-full px-4 py-2.5 bg-[#002828] dark:bg-[#1E1E1E] text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-white/30 dark:focus:ring-[#26A69A]/30 transition-all duration-300 text-sm"
+                    className="w-full px-4 py-2.5 bg-[#002828] text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-white/30 transition-all duration-300 text-sm"
                     disabled={isSubmitting}
                   />
                   <motion.button
                     type="submit"
-                    className={`w-full flex items-center justify-center px-4 py-2.5 bg-white dark:bg-[#26A69A] text-gray-900 dark:text-white hover:text-black dark:hover:text-white rounded-lg transition-all duration-300 text-sm font-medium ${
-                      isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-gray-50 dark:hover:bg-[#2A897F]'
-                    }`}
+                    className="w-full flex items-center justify-center px-4 py-2.5 bg-white !text-[#003D3D] rounded-lg transition-all duration-300 text-sm font-medium disabled:opacity-70 disabled:cursor-not-allowed"
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.99 }}
                     disabled={isSubmitting}
@@ -107,7 +105,7 @@ const Footer: React.FC = () => {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="text-green-400 dark:text-[#4FD1C5] text-sm flex items-center justify-center space-x-2"
+                      className="text-green-400 text-sm flex items-center justify-center space-x-2"
                     >
                       Thanks for subscribing!
                     </motion.div>
@@ -125,7 +123,7 @@ const Footer: React.FC = () => {
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-[#26A69A] transition-colors duration-300">
+                    <a href={link.href} className="text-gray-300 hover:text-white transition-colors duration-300">
                       {link.name}
                     </a>
                   </li>
@@ -139,7 +137,7 @@ const Footer: React.FC = () => {
               <ul className="space-y-3">
                 {footerLinks.support.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-[#26A69A] transition-colors duration-300">
+                    <a href={link.href} className="text-gray-300 hover:text-white transition-colors duration-300">
                       {link.name}
                     </a>
                   </li>
@@ -153,7 +151,7 @@ const Footer: React.FC = () => {
               <ul className="space-y-3">
                 {footerLinks.legal.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-[#26A69A] transition-colors duration-300">
+                    <a href={link.href} className="text-gray-300 hover:text-white transition-colors duration-300">
                       {link.name}
                     </a>
                   </li>
@@ -164,7 +162,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-gray-600 dark:border-gray-800 text-center text-gray-400">
+        <div className="mt-8 pt-8 border-t border-gray-600 text-center text-gray-400">
           <p>© {currentYear} ApanaGhr. All rights reserved.</p>
         </div>
       </div>

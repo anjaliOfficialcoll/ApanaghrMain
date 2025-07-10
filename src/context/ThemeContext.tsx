@@ -114,11 +114,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-<<<<<<< HEAD
     <ThemeContext.Provider value={{ theme, isDarkMode: theme === 'dark', toggleTheme, setTheme }}>
-=======
-    <ThemeContext.Provider value={{ theme, isDarkMode, toggleTheme, setTheme }}>
->>>>>>> bc6aceadb742f43a192e481a66efffbd101e6bdc
       {children}
     </ThemeContext.Provider>
   );
@@ -130,8 +126,4 @@ export const useTheme = () => {
     throw new Error('useTheme must be used within a ThemeProvider');
   }
   return context;
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> bc6aceadb742f43a192e481a66efffbd101e6bdc
