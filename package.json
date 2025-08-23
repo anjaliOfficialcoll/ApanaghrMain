@@ -10,7 +10,12 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
+<<<<<<< HEAD
     "framer-motion": "^10.16.4",
+=======
+    "framer-motion": "^10.18.0",
+    "lucide-react": "^0.540.0",
+>>>>>>> 78e7e34 (Initial commit)
     "next": "^14.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

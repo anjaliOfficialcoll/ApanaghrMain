@@ -1,39 +1,38 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { FiSun, FiMoon } from 'react-icons/fi';
-import { useTheme } from '@/context/ThemeContext';
+import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-const ThemeToggle = () => {
-  const { isDark, toggleTheme } = useTheme();
+interface ThemeContextType {
+  isDark: boolean;
+  toggleTheme: () => void;
+}
+
+// create context with proper typing
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
+  const [isDark, setIsDark] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDark((prev) => !prev);
+    // also toggle the <html> class for Tailwind dark mode
+    if (typeof document !== 'undefined') {
+      document.documentElement.classList.toggle('dark');
+    }
+  };
 
   return (
-    <motion.button
-      onClick={toggleTheme}
-      className="
-        p-2 rounded-full 
-        bg-transparent 
-        hover:bg-opacity-20 
-        transition-colors
-        dark:hover:bg-gray-700
-      "
-      whileTap={{ scale: 0.95 }}
-      title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-    >
-      <motion.div
-        initial={false}
-        animate={{ rotate: isDark ? 180 : 0 }}
-        transition={{ duration: 0.3, ease: 'easeInOut' }}
-      >
-        {isDark ? (
-          <FiSun className="w-5 h-5 text-white" />
-        ) : (
-          <FiMoon className="w-5 h-5 text-gray-800" />
-        )}
-      </motion.div>
-    </motion.button>
+    <ThemeContext.Provider value={{ isDark, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
   );
 };
 
-export default ThemeToggle;
+// custom hook
+export const useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
+  return context;
+};

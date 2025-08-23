@@ -1,0 +1,167 @@
+/* Basic resets / font (use your site font or uncomment Google font import in main layout) */
+:root{
+	--teal: #00796B;
+	--white: #ffffff;
+	--muted: #667580;
+	--shadow: 0 8px 30px rgba(0,0,0,0.12);
+	--pill-radius: 999px;
+}
+
+.apanaghr-hero {
+	/* ...existing hero styles (background image, height, center) ... */
+	padding: 6rem 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	font-family: "Inter", "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	color: var(--white);
+}
+
+.apanaghr-hero-inner {
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+}
+
+.apanaghr-tagline {
+	font-size: 2.25rem;
+	margin: 0 0 1.25rem 0;
+	font-weight: 600;
+	letter-spacing: -0.02em;
+}
+
+/* Wrapper that floats the pill */
+.apanaghr-search-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+/* Tabs sitting on top of the pill */
+.apanaghr-search-tabs {
+	display: inline-flex;
+	background: transparent;
+	border-radius: 999px;
+	padding: 6px;
+	gap: 6px;
+	margin-bottom: -14px; /* overlap the pill slightly */
+	z-index: 2;
+	position: relative;
+}
+
+.apanaghr-search-tabs .tab {
+	background: rgba(255,255,255,0.95);
+	border: none;
+	padding: 8px 16px;
+	border-radius: 999px;
+	font-weight: 600;
+	color: var(--muted);
+	cursor: pointer;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.apanaghr-search-tabs .tab.active {
+	background: var(--teal);
+	color: #fff;
+	box-shadow: 0 6px 18px rgba(0,121,107,0.18);
+}
+
+/* Main pill-shaped search bar */
+.apanaghr-search-bar {
+	width: 70%; /* target width as required */
+	max-width: 1100px;
+	min-width: 320px;
+	display: grid;
+	grid-template-columns: 220px 1fr auto;
+	align-items: center;
+	background: var(--white);
+	padding: 12px;
+	border-radius: var(--pill-radius);
+	box-shadow: var(--shadow);
+	gap: 8px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 1;
+}
+
+/* Controls */
+.control { display:flex; align-items:center; gap:8px; }
+
+.city-select {
+	padding: 10px 12px;
+	border-radius: 999px;
+	border: 1px solid #e6eef0;
+	background: transparent;
+	font-weight: 600;
+	color: #1f4b49;
+	outline: none;
+	min-width: 0;
+}
+
+/* Search input group */
+.control-search {
+	position: relative;
+}
+
+.area-input {
+	width: 100%;
+	padding: 12px 44px 12px 16px;
+	border-radius: 999px;
+	border: 1px solid #e6eef0;
+	font-size: 1rem;
+	outline: none;
+	box-shadow: none;
+}
+
+.icon {
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+	background: none;
+	border: none;
+	color: var(--muted);
+	padding: 6px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+.icon.mic { right: 44px; } /* mic sits left of locate icon */
+.icon svg { display:block; }
+
+/* Action button */
+.search-btn {
+	background: var(--teal);
+	color: #fff;
+	border: none;
+	padding: 12px 22px;
+	border-radius: 999px;
+	font-weight: 700;
+	cursor: pointer;
+	box-shadow: 0 8px 22px rgba(0,121,107,0.16);
+}
+
+/* Small helpers */
+.visually-hidden {
+	position: absolute !important;
+	height: 1px; width: 1px;
+	overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+	white-space: nowrap;
+}
+
+/* Responsive: collapse into stacked layout on small screens */
+@media (max-width: 880px) {
+	.apanaghr-search-bar {
+		width: 92%;
+		grid-template-columns: 1fr;
+		padding: 12px;
+		gap: 10px;
+	}
+	.city-select { width: 100%; }
+	.control-search { width: 100%; }
+	.search-btn { width: 100%; padding: 12px; }
+	.icon.mic { right: 72px; }
+	.apanaghr-search-tabs { gap: 4px; padding: 4px; }
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use client';
 
 import React, { useState } from 'react';
@@ -310,3 +311,34 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
+=======
+import React from "react";
+import HeroContent from "./HeroContent";
+import HeroSearchBar from "./HeroSearchBar";
+
+
+export default function HeroLayout() {
+  return (
+    <section
+      className="relative w-full h-[520px] bg-cover bg-center"
+      style={{
+        backgroundImage: "url('/hero.jpg')",
+      }}
+    >
+      {/* Overlay for better readability */}
+      <div className="absolute inset-0 bg-black/30"></div>
+
+      {/* Hero Content + Search Bar */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+        {/* Headings and subheadings */}
+        <HeroContent />
+
+        {/* Search bar positioned just below headings */}
+        <div className="mt-6 md:-mt-2 w-full max-w-4xl">
+          <HeroSearchBar />
+        </div>
+      </div>
+    </section>
+  );
+}
+>>>>>>> 78e7e34 (Initial commit)
